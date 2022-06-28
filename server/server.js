@@ -16,14 +16,14 @@ mongoose
 
 app.use(cors());
 app.use(express.json());
-app.use(express.static(path.join(__dirname, '../build')));
+app.use(express.static(path.join(__dirname, '..', 'client', 'build')));
 
 app.get('/hello', (req, res) => {
   res.send('world');
 });
 
 app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, '../build', 'index.html'));
+  res.sendFile(path.join(__dirname, '..', 'client', 'build', 'index.html'));
 });
 
 app.use((req, res) => {
